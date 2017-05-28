@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+            <link href="style.css" type="text/css" rel="stylesheet">
+    </head>
+
+<body>
+    
+    <h1>ADDRESS BOOK DATA</h1>
+    
+    <input type="text" class ="textBox" placeholder="search company...">
+    <button class="btn">Search</button>
+    
+    <hr>
+    
+    <div class = 'srchRes'></div>
+    
+    <script class="template1" type="text/handlebars-x">
+        <center><table>
+            <thead>
+                <th>Company Name</th>
+                <th>Relation Type</th>
+                <th>KEY</th>
+            </thead>
+            <tbody>
+            {{#each rowset}}
+                <tr>
+                    <td>{{F0101_ALPH}}</td>
+                    <td>{{TYPE}}</td>
+                    <td>{{F0101_AT1}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table></center>
+    </script>
+    <hr>
+    
+    <div class = 'tableDiv'>
+    <script id="template" type="text/handlebars-x">
+        <center><table>
+            <thead>
+                <th>Company Name</th>
+                <th>Relation Type</th>
+                <th>KEY</th>
+            </thead>
+            <tbody>
+            {{#each rowset}}
+                <tr>
+                    <td>{{F0101_ALPH}}</td>
+                    <td>{{TYPE}}</td>
+                    <td>{{F0101_AT1}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table></center>
+    </script>
+    </div>
+    
+    <div class="info"></div>
+    
+</body>
+        <script src="main.js"></script>
+</html>
