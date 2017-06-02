@@ -8,11 +8,14 @@
     </head>
 
 <body>
-    
-    <h1>ADDRESS BOOK DATA</h1>
-    
+    <header>
+        <h1>ADDRESS BOOK DATA</h1>
+    </header>
+    <br>
+    <br>
     <input type="text" class ="textBox" placeholder="search company...">
-    <button class="btn">Search</button>
+    <input type="text" class ="relationSrch" placeholder="search relation...">
+    
     
     <hr>
     
@@ -27,10 +30,10 @@
             </thead>
             <tbody>
             {{#each rowset}}
-                <tr>
+                <tr class = 'keys'>
                     <td>{{F0101_ALPH}}</td>
-                    <td>{{TYPE}}</td>
-                    <td>{{F0101_AT1}}</td>
+                    <td class = 'type'>{{TYPE}}</td>
+                    <td class = 'keys'>{{F0101_AT1}}</td>
                 </tr>
             {{/each}}
             </tbody>

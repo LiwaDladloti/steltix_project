@@ -1,5 +1,8 @@
 body {
     text-align: center;
+    margin: 0px;
+    background: ghostwhite;
+    font-family: sans-serif;
 }
 table, td, th {    
     border: 1px solid #ddd;
@@ -9,12 +12,28 @@ table {
     border-collapse: collapse;
     width: 50%;
 }
+th {
+    background: #999;
+}
 th, td {
     padding: 15px;
 }
 hr {
     visibility: hidden;
 }
-.hide{
+.hide {
     display: none;
+}
+header {
+    background: black;
+    margin: 0px;
+    color: ghostwhite;
+    padding: 10px 20px;
+    letter-spacing: .2em;
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+.relationSrch, .textBox {
+    padding: 10px 20px;
+    border-top: solid 1px;
 }

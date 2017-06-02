@@ -4808,45 +4808,46 @@
 
     
     var template = document.querySelector('#template');
-    var tableTemplate = Handlebars.compile(template.innerHTML);    
-
+    var tableTemplate = Handlebars.compile(template.innerHTML);
     
     var info = document.querySelector('.info');
     var textBox = document.querySelector('.textBox');
     var btn = document.querySelector('.btn');
     //var srchRes = document.querySelector('.srchRes');
-    var tablediv = document.querySelector('.tablediv')
-    
-    var allCmps = [];
+    var tablediv = document.querySelector('.tablediv');
 
 
     var template1 = document.querySelector('.template1');
     var tableTemplate1 = Handlebars.compile(template1.innerHTML);
 
-    textBox.addEventListener('keyup', function () {
-    
-    var results = rowset.filter(function(cust) {
+function whatEver(){
+        var results = rowset.filter(function(cust) {
         return cust.F0101_ALPH.indexOf(textBox.value) > -1;
     });
     
     info.innerHTML = tableTemplate1({
         rowset: results
     });
+}
+
+window.onload = function(){
+    whatEver();
+};
+
+    textBox.addEventListener('keyup', function () {
+    whatEver();
+});
+
+var relationSrch = document.querySelector('.relationSrch');
+relationSrch.addEventListener('keyup', function () {
     
-//    textBox.value = '';
-    //tablediv.style.display = 'none';
-//    for(var i = 0; i < rowset.length; i++) {
-//        var cmpName = rowset[i];
-//        allCmps.push(cmpName.F0101_ALPH);
-//        console.log(allCmps)
-//           
-//        for (var i = 0; i < allCmps.length; i++){
-//            var indivCmp = allCmps[i];
-//            if (textBox.value !== '') {
-//            srchRes.innerHTML = 'Team Awesome!!!'
-//            }
-//        }
-//    }
+    var result = rowset.filter(function(rel) {
+        return rel.TYPE.indexOf(relationSrch.value) > -1;
+    });
+    
+    info.innerHTML = tableTemplate1({
+        rowset: result
+    });
 });
     
     
@@ -4854,6 +4855,7 @@
         
         if (row.F0101_AT1 === 'O'){
             row.TYPE = "Opportunity";
+//            document.querySelector('.key').style.backgroundColor = 'red';
         } else if (row.F0101_AT1 === 'F'){
             row.TYPE = "Foreign";
         } else if (row.F0101_AT1 === 'W'){
@@ -4877,11 +4879,8 @@
         } 
         
         return row;
-    })
-
-    info.innerHTML = tableTemplate({
-        rowset: rowset
     });
+
 
     
 //    var req = {}; // empty object to hold our http request
